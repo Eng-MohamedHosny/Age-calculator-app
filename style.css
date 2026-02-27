@@ -1,0 +1,348 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  /* --- Colors --- */
+  --purple-500: hsl(259, 100%, 65%);
+  --red-400: hsl(0, 100%, 67%);
+
+  /* Neutrals */
+  --white: hsl(0, 100%, 100%);
+  --grey-100: hsl(0, 0%, 94%);
+  --grey-200: hsl(0, 0%, 86%);
+  --grey-500: hsl(0, 1%, 44%);
+  --black: hsl(0, 0%, 0%);
+
+  /* --- Typography --- */
+  --ff-primary: "Poppins", sans-serif;
+
+  /* Font Weights */
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-regular: 400;
+
+  /* Typography Presets */
+  /* Note: Using rem is better for accessibility. 16px = 1rem */
+
+  /* Preset 1 */
+  --fs-100: 104px;
+  --lh-100: 1.1;
+  --ls-100: -2px;
+
+  /* Preset 2 */
+  --fs-200: 56px;
+  --lh-200: 1.1;
+  --ls-200: -2px;
+
+  /* Preset 3 */
+  --fs-300: 32px;
+  --lh-300: 1.5;
+  --ls-300: 0px;
+
+  /* Preset 4 */
+  --fs-400: 20px;
+  --lh-400: 1.5;
+  --ls-400: 0px;
+
+  /* Preset 5 */
+  --fs-500: 14px;
+  --lh-500: 1.5;
+  --ls-500-bold: 5px;
+
+  /* Preset 6 */
+  --fs-600: 12px;
+  --lh-600: 1.5;
+  --ls-600-bold: 4px;
+  /* --- Typography Presets (Font Shorthand) --- */
+
+  /* Preset 1 — 104px ExtraBold Italic */
+  --tp-1-font: italic var(--fw-extrabold) 10.4rem / 1.1 var(--ff-primary);
+  --tp-1-ls: -0.2rem;
+
+  /* Preset 2 — 56px ExtraBold Italic */
+  --tp-2-font: italic var(--fw-extrabold) 5.6rem / 1.1 var(--ff-primary);
+  --tp-2-ls: -0.2rem;
+
+  /* Preset 3 — 32px Bold */
+  --tp-3-font: var(--fw-bold) 3.2rem / 1.5 var(--ff-primary);
+  --tp-3-ls: 0;
+
+  /* Preset 4 — 20px Bold */
+  --tp-4-font: var(--fw-bold) 2rem / 1.5 var(--ff-primary);
+  --tp-4-ls: 0;
+
+  /* Preset 5 Bold — 14px Bold */
+  --tp-5-bold-font: var(--fw-bold) 1.4rem / 1.5 var(--ff-primary);
+  --tp-5-bold-ls: 0.5rem;
+
+  /* Preset 5 Italic — 14px Italic */
+  --tp-5-italic-font: italic var(--fw-regular) 1.4rem / 1.5 var(--ff-primary);
+  --tp-5-italic-ls: 0;
+
+  /* Preset 6 Bold — 12px Bold */
+  --tp-6-bold-font: var(--fw-bold) 1.2rem / 1.5 var(--ff-primary);
+  --tp-6-bold-ls: 0.4rem;
+
+  /* Preset 6 Italic — 12px Italic */
+  --tp-6-italic-font: italic var(--fw-regular) 1.2rem / 1.5 var(--ff-primary);
+  --tp-6-italic-ls: 0;
+
+  /* --- Spacing System --- */
+  --space-0: 0px;
+  --space-100: 8px;
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-600: 48px;
+  --space-700: 56px;
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--ff-primary);
+  background: var(--grey-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-inline: 1.6rem;
+}
+.container {
+  padding: var(--space-600) var(--space-300);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-400);
+  background: var(--white);
+  border-radius: var(--space-300);
+  border-bottom-right-radius: 10rem;
+  max-width: 34.3rem;
+}
+.date-field {
+  display: flex;
+  gap: var(--space-200);
+}
+.date-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+}
+.date-item label {
+  color: var(--grey-500);
+  font: var(--tp-6-bold-font);
+  letter-spacing: var(--tp-6-bold-ls);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.date-item input {
+  padding: var(--space-100) var(--space-200);
+  width: 100%;
+  min-width: 8.8rem;
+  border: 1px solid var(--grey-200);
+  border-radius: var(--space-100);
+  color: var(--black);
+  font: var(--tp-4-font);
+  letter-spacing: var(--tp-4-ls);
+  cursor: pointer;
+  outline: none;
+}
+.date-item input:focus {
+  border-color: var(--purple-500);
+  color: var(--purple-500);
+}
+.date-item .error-message {
+  font: var(--tp-6-italic-font);
+  letter-spacing: var(--tp-6-italic-ls);
+  color: var(--red-400);
+  display: none;
+}
+.middle-container {
+  height: 6.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.middle-container .arrow-btn {
+  background: var(--purple-500);
+  border-radius: 50%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.middle-container .arrow-btn svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  aspect-ratio: 1/1;
+}
+.arrow-btn:active,
+.arrow-btn:hover,
+.arrow-btn:focus {
+  background: #000;
+}
+.middle-container hr {
+  background: var(--grey-200);
+  width: 100%;
+  height: 2px;
+  border: none;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+}
+.age-container h2 {
+  font: var(--tp-2-font);
+  letter-spacing: var(--tp-2-ls);
+}
+.age-container span {
+  color: var(--purple-500);
+  margin-right: var(--space-100);
+}
+/* Error State */
+.error-state {
+  label {
+    color: var(--red-400);
+  }
+  input {
+    border-color: var(--red-400);
+  }
+  .error-message {
+    color: var(--red-400);
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    padding: var(--space-700);
+    max-width: 686px;
+    border-bottom-right-radius: 20rem;
+  }
+  .date-field {
+    gap: var(--space-400);
+  }
+  .date-item {
+    gap: var(--space-100);
+  }
+  .date-item label {
+    font: var(--tp-5-bold-font);
+    letter-spacing: var(--tp-5-bold-ls);
+  }
+  .date-item input {
+    padding: var(--space-100) var(--space-300);
+    min-width: 17rem;
+    font: var(--tp-3-font);
+    letter-spacing: var(--tp-3-ls);
+  }
+  .date-item .error-message {
+    font: var(--tp-5-italic-font);
+    letter-spacing: var(--tp-5-italic-ls);
+  }
+
+  .middle-container {
+    height: 9.6rem;
+  }
+  .middle-container .arrow-btn svg {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+  .age-container h2 {
+    font: var(--tp-1-font);
+    letter-spacing: var(--tp-1-ls);
+  }
+}
+@media (min-width: 1440px) {
+  .container {
+    min-width: 86rem;
+    gap: 0;
+  }
+  .date-field .date-item {
+    width: 16rem;
+  }
+  .middle-container {
+    justify-content: flex-end;
+  }
+}

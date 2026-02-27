@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+		<link rel="stylesheet" href="style.css" />
+		<!-- Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+		<title>Frontend Mentor | Age calculator app</title>
+	</head>
+	<body>
+		<main class="container">
+			<section class="date-field">
+				<div class="day-container date-item">
+					<label for="day">Day</label>
+					<input class="day-input" type="number" min="1" max="31" placeholder="DD" required id="day"/>
+					<p class="error-message day-error">Must be a valid day</p>
+				</div>
+				<div class="month-container date-item">
+					<label for="month">Month</label>
+					<input class="month-input" type="number" min="1" max="12" placeholder="MM" id="month" required />
+					<p class="error-message month-error ">Must be a valid month</p>
+				</div>
+				<div class="year-container date-item">
+					<label for="year">Year</label>
+					<input class="year-input" type="number" min="1" placeholder="YYYY" id="year" required/ >
+					<p class="error-message year-error">Must be in the past</p>
+				</div>
+			</section>
+			<section class="middle-container">
+				<hr class="" />
+				<button class="arrow-btn">
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+						<path d="M0.0454102 12.0103C4.04541 11.8287 12.0454 13.9723 12.0454 24" stroke="white" stroke-width="2" />
+						<path d="M12.0454 24V0" stroke="white" stroke-width="2" />
+						<path d="M24.0454 12.0103C20.0454 11.8287 12.0454 13.9723 12.0454 24" stroke="white" stroke-width="2" />
+					</svg>
+				</button>
+			</section>
+			<section class="age-container">
+				<h2><span id="age-years">--</span>years</h2>
+				<h2><span id="age-months">--</span>months</h2>
+				<h2><span id="age-days">--</span>days</h2>
+			</section>
+		</main>
+    <script src="script.js"></script>
+	</body>
+</html>
