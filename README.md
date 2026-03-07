@@ -1,5 +1,5 @@
 # Age-calculator-app
-##Overview
+## Overview
 This project is an age calculator application built to practice JavaScript logic, input validation, and UI development using pure HTML, CSS, and JavaScript. The main goal was to implement reliable date handling and create a clean user experience.
 ### Screenshot
 <img src="./design/desktop-design.jpg" alt="Age-calculator-app Screenshot" width="600">
